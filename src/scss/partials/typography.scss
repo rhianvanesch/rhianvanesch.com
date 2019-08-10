@@ -1,0 +1,132 @@
+a:focus,
+button:focus,
+input:focus,
+summary:focus,
+textarea:focus {
+  outline: 3px solid $link-colour--light;
+}
+
+body {
+  @include font-size(1rem);
+
+  color: $text-colour;
+}
+
+a {
+  color: $link-colour;
+  text-decoration: underline;
+  text-decoration-color: $link-colour--light;
+
+  &:hover,
+  &:focus {
+    text-decoration-color: inherit;
+  }
+}
+
+h1 {
+  @include font-size(1.75rem);
+
+  font-weight: normal;
+  margin: 0 0 1.5rem 0;
+}
+
+h2 {
+  @include font-size(1.5rem);
+
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  @include font-size(1.25rem);
+
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 1.125rem;
+}
+
+ul,
+ol {
+  line-height: 1.7;
+  margin: 0 0 1rem 0;
+  padding-left: 1rem;
+}
+
+p {
+  line-height: 1.7;
+  margin: 0;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+pre {
+  @include font-size(1rem);
+
+  line-height: 1.4;
+  overflow: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+
+  @media screen and (min-width: 900px) {
+    white-space: pre;
+  }
+
+  code {
+    padding: 0;
+  }
+}
+
+code {
+  @include font-size(1rem);
+
+  background-color: #002b36;
+  border-radius: 4px;
+  color: #93a1a1;
+  padding: 0.25rem;
+  word-break: break-word;
+}
+
+.feature {
+  @include font-size(1.125rem);
+
+  color: inherit;
+}
+
+.text-aside {
+  @include font-size(0.8em);
+
+  font-style: italic;
+}
+
+.screen-reader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+details {
+  margin-bottom: 1.5rem;
+}
+
+summary {
+  @supports (display: grid) {
+    cursor: pointer;
+  }
+
+  line-height: 1.7;
+  list-style-type: none;
+
+  h3 {
+    display: inline-block;
+    margin: 0;
+  }
+}

@@ -1,0 +1,7 @@
+{% if config.environment == "production" %}
+<script src="https://browser.sentry-cdn.com/5.6.1/bundle.min.js" integrity="sha384-pGTFmbQfua2KiaV2+ZLlfowPdd5VMT2xU4zCBcuJr7TVQozMO+I1FmPuVHY3u8KB" crossorigin="anonymous">
+</script>
+<script>Sentry.init({ dsn: 'https://d92fec4650834765bb8afa23f1eac181@sentry.io/1527008' });</script>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "rve-11ty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "cross-env ELEVENTY_ENV=production run-p scss js prod",
+    "prod": "eleventy",
+    "js": "rollup --config",
+    "scss": "sass src/scss/main.scss dist/css/style.css --style=compressed",
+    "serve": "eleventy --serve",
+    "start": "cross-env ELEVENTY_ENV=development run-p scss js serve"
+  },
+  "author": "Rhian van Esch <rhian@rhianvanesch.com> (https://rhianvanesch.com/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "@11ty/eleventy-plugin-rss": "^1.0.6",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "cross-env": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "rfs": "^8.0.4",
+    "rollup": "^1.19.4",
+    "rollup-plugin-terser": "^5.1.1",
+    "sass": "^1.22.9",
+    "slugify": "^1.3.4"
+  }
+}

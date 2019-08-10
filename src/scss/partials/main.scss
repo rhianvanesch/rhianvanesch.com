@@ -1,0 +1,40 @@
+main {
+  grid-area: main;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid $link-colour--lighter;
+  height: 1px;
+  margin: 1.5rem auto;
+}
+
+figure {
+  border: 10px solid #f2f2f2;
+  margin: 0 auto 1rem auto;
+  max-width: 620px;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+table,
+th {
+  text-align: left;
+}
+
+td,
+th {
+  line-height: 1.7;
+  padding: 0 0.5rem;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../node_modules/rfs/scss";
+
+@import "partials/reset";
+
+@import "partials/variables";
+
+@import "partials/structure";
+@import "partials/typography";
+
+@import "partials/header";
+@import "partials/main-menu";
+@import "partials/main";
+@import "partials/posts-list";
+@import "partials/footer";
+@import "partials/contact-form";
+
+@import "partials/syntax-highlighting";

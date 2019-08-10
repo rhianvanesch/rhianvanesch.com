@@ -1,0 +1,13 @@
+{% if collections.last5Posts.length %}
+  <ol class="posts__list" reversed>
+    {% for post in collections.last5Posts %}
+      <li class="posts__list-item">
+        <time class="posts__datetime">
+          <span>{{ post.date | getDayMonth }}</span>
+          <span>{{ post.date | getYear }}</span>
+        </time>
+        <a href="{{ post.url }}" class="posts__link" rel="bookmark">{{ post.data.title }}</a>
+      </li>
+    {% endfor %}
+  </ol>
+{% endif %}

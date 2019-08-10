@@ -1,0 +1,53 @@
+<header class="header">
+  <div class="header__wrapper">
+    <a href="/" class="site-title__link">
+      {% if page.url == '/' %}
+      <h1 class="site-title">
+        <span>Rhian</span> <span class="site-title--light">van</span> <span>Esch</span>
+      </h1>
+      {% else %}
+      <span class="site-title">
+        <span>Rhian</span> <span class="site-title--light">van</span> <span>Esch</span>
+      </span>
+      {% endif %}
+    </a>
+
+    <nav class="main-menu">
+      <ul class="main-menu__list">
+        {% if page.url == item.url %}
+          {% assign activeClass = ' main-menu__list-item--active' %}
+        {% endif %}
+
+        {% for item in navigation.items %}
+        <li class="main-menu__list-item{{ activeClass }}">
+          <a class="main-menu__link" href="{{ item.url }}">
+            {{ item.text }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <ul class="social-menu">
+        <li class="social-menu__item">
+          <a href="https://twitter.com/rhianvanesch" class="social-menu__link">
+            {% include partials/social-icons/twitter.html %}
+            <span class="screen-reader-only">Twitter</span>
+          </a>
+        </li>
+        <li class="social-menu__item">
+          <a href="https://github.com/escherina" class="social-menu__link">
+            {% include partials/social-icons/github.html %}
+            <span class="screen-reader-only">GitHub</span>
+          </a>
+        </li>
+        <li class="social-menu__item">
+          <a href="https://www.linkedin.com/in/rhianvanesch" class="social-menu__link">
+            {% include partials/social-icons/linkedin.html %}
+            <span class="screen-reader-only">LinkedIn</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  
