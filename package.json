@@ -7,9 +7,11 @@
     "build": "cross-env ELEVENTY_ENV=production run-p scss js prod",
     "prod": "eleventy",
     "js": "rollup --config",
+    "js:watch": "rollup --config --watch",
     "scss": "sass src/scss/main.scss dist/css/style.css --style=compressed",
+    "scss:watch": "sass src/scss/main.scss dist/css/style.css --style=compressed --watch",
     "serve": "eleventy --serve",
-    "start": "cross-env ELEVENTY_ENV=development run-p scss js serve"
+    "start": "cross-env ELEVENTY_ENV=development run-p scss:watch js:watch serve"
   },
   "author": "Rhian van Esch <rhian@rhianvanesch.com> (https://rhianvanesch.com/)",
   "license": "MIT",
