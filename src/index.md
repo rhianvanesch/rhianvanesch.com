@@ -1,4 +1,4 @@
 ---
 layout: layouts/home.html
-title: Home
+title: Rhian van Esch
 ---
