@@ -1,6 +1,6 @@
-src/posts/**/*.md
-src/posts.md
+src/posts/
 src/about.md
 src/thank-you.md
 src/uses.md
 src/contact.md
+src/posts.md

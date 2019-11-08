@@ -6,6 +6,8 @@ const slugify = require("slugify");
 const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js");
 
 module.exports = eleventyConfig => {
+  eleventyConfig.addPassthroughCopy("src/static");
+
   eleventyConfig.addCollection("last5Posts", function(collection) {
     return collection
       .getFilteredByTag("posts")
