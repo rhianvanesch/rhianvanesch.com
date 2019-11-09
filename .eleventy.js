@@ -8,12 +8,12 @@ const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js");
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/static");
 
-  eleventyConfig.addCollection("last5Posts", function(collection) {
-    return collection
+  eleventyConfig.addCollection("last5Posts", collection =>
+    collection
       .getFilteredByTag("posts")
       .slice(0, 4)
-      .reverse();
-  });
+      .reverse()
+  );
 
   eleventyConfig.addFilter("getDayMonth", getDayMonth);
   eleventyConfig.addFilter("getYear", getYear);
@@ -36,7 +36,7 @@ module.exports = eleventyConfig => {
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
-      ready: function(err, bs) {
+      ready(err, bs) {
         const page404 = fs.readFileSync("dist/404.html");
 
         bs.addMiddleware("*", (req, res) => {
