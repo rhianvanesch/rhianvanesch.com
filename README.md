@@ -1,4 +1,4 @@
-# rhianvanesch.com-11ty
+# rhianvanesch.com
 
 My personal site, built with [Eleventy](https://www.11ty.io/).
 
