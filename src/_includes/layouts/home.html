@@ -4,13 +4,14 @@
 
     <p class="feature">I'm a front-end developer based in Eindhoven, the Netherlands. I build responsive, accessible websites with a focus on performance.</p>
     
-    <!-- <hr>
+    <hr>
 
     <h2>Recent posts</h2>
 
+    {% assign posts = collections.last5Posts %}
     {% include partials/post-list.html %}
 
-    <a href="/posts">See all posts &rarr;</a> -->
+    {% if collections.last5Posts.length > 5 %}<a href="/posts">See all posts &rarr;</a>{% endif %}
   </main>
   {% include partials/footer.html %}
 </div>

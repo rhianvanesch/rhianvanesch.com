@@ -7,6 +7,7 @@ const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/static");
+  eleventyConfig.addPassthroughCopy("src/images");
 
   eleventyConfig.addCollection("last5Posts", collection =>
     collection
