@@ -3,25 +3,23 @@
   padding-bottom: 0.25rem;
 }
 
-.posts__list {
+.post-list {
   list-style-type: none;
   margin: 0;
   margin-bottom: 1rem;
   padding: 0;
 }
 
-.posts__list-item {
+.post-list__item {
+  align-items: center;
+  display: flex;
+
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
 }
 
-.posts__list-item {
-  align-items: center;
-  display: flex;
-}
-
-.posts__datetime {
+.post-list__datetime {
   @include font-size(0.75rem);
 
   align-items: center;
@@ -34,7 +32,7 @@
   padding: 5px;
 }
 
-.posts__link {
+.post-list__link {
   @include font-size(1.125rem);
 
   font-weight: 500;
