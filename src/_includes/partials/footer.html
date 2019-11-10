@@ -1,7 +1,7 @@
     <footer class="footer">
       <div class="footer__content">
         &copy; Rhian van Esch 2017-{{ config.buildTime | getYear }}
-        <!-- <a href="#" class="footer__link">RSS</a> -->
+        <a href="{{ config.feed.path | url }}" class="footer__link">RSS</a>
       </div>
     </footer>
   
