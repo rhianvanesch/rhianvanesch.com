@@ -1,6 +1,6 @@
 ---
 title: Staying organised with GitHub project boards
-description: How GitHub project boards and issues help me stay on track.
+description: How GitHub project boards and issues help me stay on track with personal projects.
 date: 2019-11-10
 ---
 
