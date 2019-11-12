@@ -9,7 +9,7 @@ title: Uses
 
 - Theme: [Cobalt2](https://marketplace.visualstudio.com/itemdetails?itemName=wesbos.theme-cobalt2)
 - Font: [Fira Code](https://github.com/tonsky/FiraCode) with ligatures enabled
-- Favourite extensions:
+- Extensions:
   - [Debugger for Chrome](https://marketplace.visualstudio.com/itemdetails?itemName=msjsdiag.debugger-for-chrome)
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
   - [GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)
@@ -20,6 +20,7 @@ title: Uses
   - [Peacock](https://marketplace.visualstudio.com/itemdetails?itemName=johnpapa.vscode-peacock)
   - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
   - [Sass](https://marketplace.visualstudio.com/items?itemName=robinbentley.sass-indented)
+  - [Svelte](https://marketplace.visualstudio.com/items?itemName=JamesBirtles.svelte-vscode)
   - [Stylelint](https://marketplace.visualstudio.com/itemdetails?itemName=shinnn.stylelint)
   - [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
   - [Visual Studio Intellicode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)
@@ -29,8 +30,7 @@ title: Uses
 
 ## Terminal
 
-- [Cmder](https://cmder.net/) (work)
-- [Hyper](https://hyper.is/) (home) with [hyperterm-cobalt2-theme](https://github.com/wesbos/hyperterm-cobalt2-theme)
+- [Cmder](https://cmder.net/) running both WSL bash and `cmd`
 - [Git Bash for Windows](https://gitforwindows.org/) (plus the merge tool in VS Code)
 
 ---
@@ -42,56 +42,6 @@ Keyboard: Vortex Race 3 with Cherry MX Brown switches\
 Mouse: Logitech G9x Laser Mouse\
 Monitors: 2 x Dell U2515H
 
-<details>
-  <summary><h3>PC Build details</h3></summary>
-  <table>
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Item</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>CPU</td>
-        <td>AMD FX-8350 4 GHz 8-Core Processor</td>
-      </tr>
-      <tr>
-        <td>CPU Cooler</td>
-        <td>Cooler Master Hyper 212 EVO 82.9 CFM Sleeve Bearing CPU Cooler</td>
-      </tr>
-      <tr>
-        <td>Motherboard</td>
-        <td>Gigabyte GA-990FXA-UD3 ATX AM3+</td>
-      </tr>
-      <tr>
-        <td>Memory</td>
-        <td>2 x Crucial - Ballistix Sport 8 GB DDR3-1600</td>
-      </tr>
-      <tr>
-        <td>SSD</td>
-        <td>Crucial MX100 256GB</td>
-      </tr>
-      <tr>
-        <td>Hard drive</td>
-        <td>Western Digital Caviar Blue 1TB</td>
-      </tr>
-      <tr>
-        <td>Video Card</td>
-        <td>Sapphire Radeon RX 480 4GB NITRO+ 4G</td>
-      </tr>
-      <tr>
-        <td>Case</td>
-        <td>Corsair 300R</td>
-      </tr>
-      <tr>
-        <td>Power Supply</td>
-        <td>Corsair CX500 80+ Bronze Certified</td>
-      </tr>
-    </tbody>
-  </table>
-</details>
-
 ---
 
 ## Productivity
@@ -99,7 +49,6 @@ Monitors: 2 x Dell U2515H
 ### Personal projects
 
 - [GitHub project boards](https://help.github.com/en/articles/about-project-boards) and issues
-- [Trello](https://trello.com/)
 
 ### Work
 
@@ -107,24 +56,10 @@ Monitors: 2 x Dell U2515H
 
 ---
 
-## Sound
-
-- Spotify
-- [A Soft Murmur](https://asoftmurmur.com/)
-- [foobar2000](https://www.foobar2000.org/)
-
----
-
-## Design/images
-
-- [Adobe XD](https://www.adobe.com/products/xd.html)
-- [Figma](https://www.figma.com)
-- [squoosh.app](https://squoosh.app/) for resizing
-
----
-
 ## Other
 
+- [squoosh.app](https://squoosh.app/) for optimising images
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) for optimising SVGs
 - [Feedly](https://feedly.com/i/index) for my blog reading
 - [Pocket](https://getpocket.com/) to save articles that I will <s>read later</s> never read again
 - [Tweetdeck](https://tweetdeck.twitter.com/) to consume Twitter
