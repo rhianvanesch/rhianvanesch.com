@@ -5,7 +5,6 @@ before_install:
   - npm install -g @lhci/cli@0.3.x
 script:
   - npm run build
-  - lhci autorun
-  - lhci upload --target=temporary-public-storage
+  - lhci autorun --upload.target=temporary-public-storage
 addons:
   chrome: stable
