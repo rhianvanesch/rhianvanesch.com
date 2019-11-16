@@ -59,3 +59,46 @@
   margin-bottom: 0.5rem;
   padding: 5px;
 }
+
+.post {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    display: flex;
+  }
+}
+
+.heading-anchor {
+  order: 2;
+  padding-left: 6px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover svg {
+    visibility: visible;
+  }
+
+  svg {
+    visibility: hidden;
+
+    h1:hover &,
+    h2:hover &,
+    h3:hover &,
+    h4:hover &,
+    h5:hover &,
+    h6:hover & {
+      visibility: visible;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    margin-left: -22px;
+    order: 0;
+    padding-left: 0;
+    padding-right: 6px;
+  }
+}
