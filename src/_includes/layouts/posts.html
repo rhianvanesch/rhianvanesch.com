@@ -2,7 +2,7 @@
   <main>
     <h1 class="page-title">{{ title }}</h1>
 
-    {% assign posts = collections.posts %}
+    {% assign posts = collections.allPosts %}
     {% include partials/post-list.html %}
   </main>
 {% include partials/footer.html %}
