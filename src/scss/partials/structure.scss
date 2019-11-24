@@ -30,7 +30,7 @@ body {
   .wrapper {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr minmax(min-content, 70ch) 1fr;
+    grid-template-columns: 1fr minmax(0, 70ch) 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
       ". header ."
