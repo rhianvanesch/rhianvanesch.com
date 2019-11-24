@@ -1,78 +1,106 @@
-const fs = require("fs");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const slugify = require("slugify");
-const markdownIt = require("markdown-it");
-const markdownItGithubHeadings = require("markdown-it-github-headings");
+const fs = require("fs")
+const pluginRss = require("@11ty/eleventy-plugin-rss")
+const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const markdownIt = require("markdown-it")
+const markdownItAnchor = require("markdown-it-anchor")
 
-const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js");
-const { slugifyText } = require("./src/filters/slug.js");
+const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js")
+const { slugifyText } = require("./src/filters/slug.js")
 
-module.exports = eleventyConfig => {
-  eleventyConfig.addPassthroughCopy("src/static");
-  eleventyConfig.addPassthroughCopy("src/images");
+const position = {
+  false: "push",
+  true: "unshift",
+}
 
-  eleventyConfig.addCollection("last5Posts", collection =>
-    collection
-      .getFilteredByTag("posts")
-      .slice(0, 4)
-      .reverse()
-  );
+const renderPermalink = (slug, opts, state, idx) => {
+  const space = () =>
+    Object.assign(new state.Token("text", "", 0), { content: " " })
 
-  eleventyConfig.addCollection("allPosts", collection =>
+  const linkTokens = [
+    Object.assign(new state.Token("link_open", "a", 1), {
+      attrs: [
+        ["class", opts.permalinkClass],
+        ["href", opts.permalinkHref(slug, state)],
+      ],
+    }),
+    Object.assign(new state.Token("html_block", "", 0), {
+      content: `<span aria-hidden="true" class="heading-anchor__symbol">#</span>
+      <span class="screen-reader-only">Direct link to this section</span>`,
+    }),
+    new state.Token("link_close", "a", -1),
+  ]
+
+  if (opts.permalinkSpace) {
+    linkTokens[position[!opts.permalinkBefore]](space())
+  }
+  state.tokens[idx + 1].children[position[opts.permalinkBefore]](...linkTokens)
+}
+
+module.exports = (eleventyConfig) => {
+  eleventyConfig.addPassthroughCopy("src/static")
+  eleventyConfig.addPassthroughCopy("src/images")
+
+  eleventyConfig.addCollection("last5Posts", (collection) =>
+    collection.getFilteredByTag("posts").slice(0, 4).reverse()
+  )
+
+  eleventyConfig.addCollection("allPosts", (collection) =>
     collection.getFilteredByTag("posts").reverse()
-  );
+  )
 
-  eleventyConfig.addFilter("getDayMonth", getDayMonth);
-  eleventyConfig.addFilter("getYear", getYear);
-  eleventyConfig.addFilter("slug", slugifyText);
-  eleventyConfig.addFilter("toFullDate", toFullDate);
+  eleventyConfig.addFilter("getDayMonth", getDayMonth)
+  eleventyConfig.addFilter("getYear", getYear)
+  eleventyConfig.addFilter("slug", slugifyText)
+  eleventyConfig.addFilter("toFullDate", toFullDate)
 
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss)
+  eleventyConfig.addPlugin(pluginSyntaxHighlight)
 
   eleventyConfig.addLiquidShortcode(
     "image",
     (url, altText) => `<figure><img src="${url}" alt="${altText}"></figure>`
-  );
+  )
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready(err, bs) {
-        const page404 = fs.readFileSync("dist/404.html");
+        const page404 = fs.readFileSync("dist/404.html")
 
         bs.addMiddleware("*", (req, res) => {
-          res.write(page404);
-          res.end();
-        });
-      }
-    }
-  });
+          res.write(page404)
+          res.end()
+        })
+      },
+    },
+  })
 
   const markdownOptions = {
+    breaks: true,
     html: true,
-    linkify: true
-  };
+    linkify: true,
+  }
 
-  const githubHeadingsOptions = {
-    className: "heading-anchor",
-    prefixHeadingIds: false
-  };
+  const markdownItAnchorOptions = {
+    permalink: true,
+    permalinkClass: "heading-anchor",
+    renderPermalink,
+    slugify: slugifyText,
+  }
 
   const markdownLib = markdownIt(markdownOptions).use(
-    markdownItGithubHeadings,
-    githubHeadingsOptions
-  );
+    markdownItAnchor,
+    markdownItAnchorOptions
+  )
 
-  eleventyConfig.setLibrary("md", markdownLib);
+  eleventyConfig.setLibrary("md", markdownLib)
 
   return {
     dir: {
       data: "_data",
       includes: "_includes",
       input: "src",
-      output: "dist"
+      output: "dist",
     },
-    passthroughFileCopy: true
-  };
-};
+    passthroughFileCopy: true,
+  }
+}

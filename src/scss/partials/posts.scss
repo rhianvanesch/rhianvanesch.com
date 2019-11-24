@@ -66,39 +66,29 @@
   h4,
   h5,
   h6 {
-    display: flex;
+    position: relative;
   }
 }
 
 .heading-anchor {
-  order: 2;
-  padding-left: 6px;
-
-  &:focus {
-    outline: none;
+  @media screen and (min-width: 700px) {
+    left: -0.8em;
+    position: absolute;
+    width: 0.8em;
   }
+}
 
-  &:hover svg {
-    visibility: visible;
-  }
-
-  svg {
+.heading-anchor__symbol {
+  @media screen and (min-width: 700px) and (hover: hover) {
     visibility: hidden;
 
-    h1:hover &,
     h2:hover &,
     h3:hover &,
     h4:hover &,
     h5:hover &,
-    h6:hover & {
+    h6:hover &,
+    .heading-anchor:focus & {
       visibility: visible;
     }
-  }
-
-  @media screen and (min-width: 700px) {
-    margin-left: -22px;
-    order: 0;
-    padding-left: 0;
-    padding-right: 6px;
   }
 }
