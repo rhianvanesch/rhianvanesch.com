@@ -6,6 +6,7 @@ const markdownIt = require("markdown-it");
 const markdownItGithubHeadings = require("markdown-it-github-headings");
 
 const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js");
+const { slugifyText } = require("./src/filters/slug.js");
 
 module.exports = eleventyConfig => {
   eleventyConfig.addPassthroughCopy("src/static");
@@ -18,24 +19,22 @@ module.exports = eleventyConfig => {
       .reverse()
   );
 
+  eleventyConfig.addCollection("allPosts", collection =>
+    collection.getFilteredByTag("posts").reverse()
+  );
+
   eleventyConfig.addFilter("getDayMonth", getDayMonth);
   eleventyConfig.addFilter("getYear", getYear);
-  eleventyConfig.addFilter("slug", input => {
-    if (!input) {
-      return false;
-    }
-    const options = {
-      replacement: "-",
-      remove: /[&,+()$~%.'":*?<>{}]/g,
-      lower: true
-    };
-
-    return slugify(input, options);
-  });
+  eleventyConfig.addFilter("slug", slugifyText);
   eleventyConfig.addFilter("toFullDate", toFullDate);
 
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
+
+  eleventyConfig.addLiquidShortcode(
+    "image",
+    (url, altText) => `<figure><img src="${url}" alt="${altText}"></figure>`
+  );
 
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {

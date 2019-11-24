@@ -33,11 +33,11 @@ If you work with other people, the 'Automated kanban with reviews' might be bett
 
 1. As soon as I think of something I need to tackle in a project (a new feature, a bug or anything else) I open an issue on the project's issue tracker. When creating the issue, I assign it to my project board.
 
-   <img src="/images/posts/2019/add-new-issue.png" alt="">
+   {% image "/images/posts/2019/2019-11-10-add-new-issue.png" "" %}
 
 2. Because I chose the 'Automated kanban' board template, these issues become cards in the 'To do' column of my board.
 
-   <img src="/images/posts/2019/project-board-overview.png" alt="">
+   {% image "/images/posts/2019/2019-11-10-project-board-overview.png" "" %}
 
 3. When I have time to work on the issue, I create a branch.
 4. When the work is done, I open a new pull request, making sure to use [a keyword][issue-keywords] in the description so the issue will be closed when the <abbr title="Pull Request">PR</abbr> is merged. As when creating an issue, I assign the PR to my project board, which moves the card to the 'In progress' column of the project board.
