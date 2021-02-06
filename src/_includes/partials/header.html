@@ -1,5 +1,8 @@
 <header class="header">
-  <div class="header__wrapper">
+  <div
+    id="header"
+    class="header__wrapper"
+  >
     {% if page.url == '/' %}
     <h1 class="site-title">
       <span>Rhian</span> <span class="site-title--light">van</span> <span>Esch</span>
@@ -30,24 +33,38 @@
       <ul class="social-menu">
         <li class="social-menu__item">
           <a href="https://twitter.com/rhianvanesch" class="social-menu__link">
-            {% include partials/social-icons/twitter.html %}
+            {% include partials/icons/twitter.html %}
             <span class="screen-reader-only">Twitter</span>
           </a>
         </li>
         <li class="social-menu__item">
           <a href="https://github.com/escherina" class="social-menu__link">
-            {% include partials/social-icons/github.html %}
+            {% include partials/icons/github.html %}
             <span class="screen-reader-only">GitHub</span>
           </a>
         </li>
         <li class="social-menu__item">
           <a href="https://www.linkedin.com/in/rhianvanesch" class="social-menu__link">
-            {% include partials/social-icons/linkedin.html %}
+            {% include partials/icons/linkedin.html %}
             <span class="screen-reader-only">LinkedIn</span>
           </a>
         </li>
       </ul>
     </nav>
+
+    <button
+      id="dark-mode-button"
+      class="dark-mode-button"
+      hidden
+    >
+      <span class="screen-reader-only">
+        Toggle dark mode
+      </span>
+      
+      {% include partials/icons/sun.html %}
+
+      {% include partials/icons/moon.html %}
+    </button>
   </div>
 </header>
   

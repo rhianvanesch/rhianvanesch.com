@@ -2,7 +2,7 @@
   margin-top: 2rem;
 
   @supports (display: grid) {
-    background-color: $link-colour--lightest;
+    background-color: var(--link-colour--lightest);
     border-top: none;
     display: grid;
     grid-area: footer;
@@ -22,7 +22,6 @@
 }
 
 .footer__link {
-  color: darken($link-colour, 10%);
   font-weight: 500;
 }
 
