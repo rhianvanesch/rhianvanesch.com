@@ -61,6 +61,11 @@ module.exports = (eleventyConfig) => {
     (url, altText) => `<figure><img src="${url}" alt="${altText}"></figure>`
   )
 
+  eleventyConfig.addPairedLiquidShortcode(
+    "tip",
+    (content) => `<p class="tip">${content}</p>`
+  )
+
   eleventyConfig.setBrowserSyncConfig({
     callbacks: {
       ready(err, bs) {
