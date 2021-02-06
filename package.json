@@ -17,17 +17,17 @@
   "author": "Rhian van Esch <rhian@rhianvanesch.com> (https://rhianvanesch.com/)",
   "license": "MIT",
   "devDependencies": {
-    "@11ty/eleventy": "^0.9.0",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "cross-env": "^6.0.3",
-    "markdown-it-github-headings": "^1.1.2",
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-rss": "^1.1.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.6",
+    "cross-env": "^7.0.3",
+    "markdown-it-github-headings": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "rfs": "^9.0.2",
-    "rimraf": "^3.0.0",
-    "rollup": "^1.29.0",
-    "rollup-plugin-terser": "^5.2.0",
-    "sass": "^1.24.5",
-    "slugify": "^1.3.6"
+    "rfs": "^9.0.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.38.5",
+    "rollup-plugin-terser": "^7.0.2",
+    "sass": "^1.32.6",
+    "slugify": "^1.4.6"
   }
 }
