@@ -1,11 +1,99 @@
 $rfs-base-font-size: 1rem !default;
 $rfs-font-size-unit: rem !default;
 
-$text-colour: #222222;
-
 $link-colour: slateblue;
+$link-colour-dark: #9f98cc;
 
-$link-colour--light: rgba(slateblue, 0.3);
-$link-colour--lighter: rgba(slateblue, 0.2);
-$link-colour--lightest: rgba(slateblue, 0.05);
-$link-colour--super-light: rgba(slateblue, 0.025);
+:root {
+  --text-colour: #222222;
+  --link-colour: #{$link-colour};
+  --link-colour--light: #{rgba($link-colour, 0.3)};
+  --link-colour--lighter: #{rgba($link-colour, 0.2)};
+  --link-colour--lightest: #{rgba($link-colour, 0.05)};
+
+  // contact-form
+  --success-message-light: #d7e6d7;
+  --success-message-dark: #{darken(#d7e6d7, 5%)};
+  --input-bg: #ffffff;
+  --input-border: #dee4ea;
+  --button-bg: #{lighten($link-colour, 30%)};
+  --button-border: #{lighten($link-colour, 25%)};
+
+  // main
+  --figure-border: #dddddd;
+
+  // posts
+  --deprecation-message-light: #fbf9dc;
+  --deprecation-message-dark: #e2d4c2;
+
+  // structure
+  --body-bg: #f7f7f7;
+
+  // typography
+  --code-bg: rgba(110, 95, 200, 0.05);
+  --code-link: #4333a8;
+
+  &.dark-mode {
+    --text-colour: #dddddd;
+    --link-colour: #{$link-colour-dark};
+    --link-colour--light: #{rgba($link-colour-dark, 0.5)};
+    --link-colour--lighter: #{rgba($link-colour-dark, 0.3)};
+    --link-colour--lightest: #{rgba($link-colour-dark, 0.1)};
+
+    // contact-form
+    --success-message-light: #143828;
+    --success-message-dark: #{darken(#143828, 5%)};
+    --success-message-button: #{lighten(#143828, 10%)};
+    --input-bg: #333333;
+    --input-border: #444444;
+    --button-bg: #403967;
+    --button-border: #{darken(#403967, 10%)};
+
+    // main
+    --figure-border: #555555;
+
+    // posts
+    --deprecation-message-light: #fbf9dc;
+    --deprecation-message-dark: #e2d4c2;
+
+    // structure
+    --body-bg: #222222;
+
+    // typography
+    --code-bg: rgba(148, 139, 202, 0.3);
+    --code-link: #{$link-colour-dark};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-colour: #dddddd;
+    --link-colour: #{$link-colour-dark};
+    --link-colour--light: #{rgba($link-colour-dark, 0.5)};
+    --link-colour--lighter: #{rgba($link-colour-dark, 0.3)};
+    --link-colour--lightest: #{rgba($link-colour-dark, 0.1)};
+
+    // contact-form
+    --success-message-light: #143828;
+    --success-message-dark: #{darken(#143828, 5%)};
+    --success-message-button: #{lighten(#143828, 10%)};
+    --input-bg: #333333;
+    --input-border: #444444;
+    --button-bg: #403967;
+    --button-border: #{darken(#403967, 10%)};
+
+    // main
+    --figure-border: #555555;
+
+    // posts
+    --deprecation-message-light: #fbf9dc;
+    --deprecation-message-dark: #e2d4c2;
+
+    // structure
+    --body-bg: #222222;
+
+    // typography
+    --code-bg: rgba(148, 139, 202, 0.3);
+    --code-link: #{$link-colour-dark};
+  }
+}

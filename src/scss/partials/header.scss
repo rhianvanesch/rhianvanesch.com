@@ -2,8 +2,12 @@
   grid-area: header;
 }
 
+.header__wrapper {
+  position: relative;
+}
+
 .site-title__link {
-  color: $text-colour;
+  color: var(--text-colour);
   display: inline-block;
   margin-bottom: 1rem;
   margin-left: -6px;
@@ -11,7 +15,7 @@
 
   &:hover,
   &:focus {
-    background-color: $link-colour--lighter;
+    background-color: var(--link-colour--lighter);
   }
 }
 
@@ -65,5 +69,50 @@
       margin-bottom: 2rem;
       margin-left: 0;
     }
+  }
+}
+
+.dark-mode-button {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+
+  &:focus,
+  &:hover {
+    background-color: var(--link-colour--lighter);
+  }
+
+  .dark-mode-button--moon {
+    color: #060cca;
+  }
+
+  .dark-mode-button--sun {
+    color: yellow;
+    display: none;
+  }
+
+  .dark-mode & {
+    .dark-mode-button--moon {
+      display: none;
+    }
+
+    .dark-mode-button--sun {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    float: right;
+    margin-right: 5px;
+    margin-top: 20px;
+    position: static;
+    top: unset;
   }
 }

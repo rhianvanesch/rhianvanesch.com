@@ -6,6 +6,7 @@
   <meta name="description" content="{{ description | default: config.description }}" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% if page.url == '/' %}{{ title }}{% else %}{{ title }} • {{ config.title }}{% endif %}</title>
+  <script>var darkMode = JSON.parse(localStorage.getItem("rve.com-dark-mode"));darkMode&&document.documentElement.classList.add("dark-mode");</script>
   <link rel="stylesheet" href="/css/style.css">
   
   <link rel="alternate" href="{{ config.feed.path | url }}" type="application/atom+xml" title="{{ config.title }}">

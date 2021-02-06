@@ -34,7 +34,7 @@
   &:hover,
   &:focus,
   .main-menu__list-item--active & {
-    border-color: $link-colour--lighter;
+    border-color: var(--link-colour--lighter);
   }
 }
 
@@ -92,7 +92,7 @@
 
   &:hover,
   &:focus {
-    background-color: $link-colour--lighter;
+    background-color: var(--link-colour--lighter);
   }
 
   svg {

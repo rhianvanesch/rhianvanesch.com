@@ -6,7 +6,9 @@ label {
 
 input,
 textarea {
-  border: 1px solid #dee4ea;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-colour);
   display: block;
   padding: 7px;
   width: 100%;
@@ -25,34 +27,36 @@ textarea {
 }
 
 .contact-form__btn {
-  background-color: #fff;
-  border: 1px solid #dee4ea;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-border);
+  color: var(--text-colour);
   cursor: pointer;
   padding: 10px 15px 12px;
 
   &:hover {
-    background-color: $link-colour--lighter;
-    border-color: $link-colour--lighter;
+    background-color: var(--link-colour--lighter);
+    border-color: var(--link-colour--lighter);
   }
 }
 
 .success-message {
   align-items: center;
-  background-color: #d7e6d7;
-  border: 1px solid darken(#d7e6d7, 5%);
+  background-color: var(--success-message-light);
+  border: 1px solid var(--success-message-dark);
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
 }
 
 .success-message__btn {
-  background-color: lighten(#d7e6d7, 5%);
+  background-color: var(--success-message-button);
   border: inherit;
+  color: var(--text-colour);
   cursor: pointer;
   margin: 1rem 0;
   padding: 8px 10px;
 
   &:hover {
-    background-color: darken(#d7e6d7, 5%);
+    background-color: var(--success-message-dark);
   }
 }
