@@ -1,7 +1,9 @@
 ---
 title: Adding a dark mode with CSS custom properties
 description: TODO
-date: 2020-01-17
+date: 2021-02-14
+permalink: false
+eleventyExcludeFromCollections: true
 ---
 
 ## 1. Create your colour palette
@@ -15,10 +17,10 @@ If you're starting a project from scratch, you can skip this step.
 Find all the colours in your project and make a list in a scratch file, making a note of where they're used. Include:
 
 - hex colours
-  - if you can search for regular expressions in your IDE, try this: `/#([a-f0-9]{3}){1,2}\b/`
-- rgb(a) colours
-- hsl colours
-- CSS colour keywords (i.e. `white`, `black`, `mediumseagreen`)
+  - if you can search for regular expressions in your IDE, try this: `/#([a-f0-9]{3}){1,2}\b/` (in Visual Studio Code, omit the starting and ending `/` characters)
+- `rgb` and `rgba` colours
+- `hsl` colours
+- CSS colour keywords (e.g. `white`, `black`, `mediumseagreen`)
 
 This is a good time to remove or combine any similar colours.
 
@@ -129,13 +131,15 @@ This piece of code needs to:
 - add an event listener to run the previously-defined function when the user clicks the button element
 
 ```js
-const darkModeButton = document.getElementById("dark-mode-toggle");
+const darkModeButton = document.getElementById(
+  "dark-mode-toggle"
+)
 
 function toggleDarkMode() {
-  document.documentElement.classList.toggle("dark-mode");
+  document.documentElement.classList.toggle("dark-mode")
 }
 
-darkModeButton.addEventListener("click", toggleDarkMode);
+darkModeButton.addEventListener("click", toggleDarkMode)
 ```
 
 {% tip %}

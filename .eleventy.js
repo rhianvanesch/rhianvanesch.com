@@ -48,6 +48,9 @@ module.exports = (eleventyConfig) => {
     collection.getFilteredByTag("posts").reverse()
   )
 
+  eleventyConfig.addWatchTarget("./src/scss/");
+  eleventyConfig.addWatchTarget("./src/js/");
+
   eleventyConfig.addFilter("getDayMonth", getDayMonth)
   eleventyConfig.addFilter("getYear", getYear)
   eleventyConfig.addFilter("slug", slugifyText)

@@ -2,19 +2,15 @@ module.exports = {
   items: [
     {
       text: "Posts",
-      url: "/posts"
+      url: "/posts",
     },
     {
       text: "Uses",
-      url: "/uses"
+      url: "/uses",
     },
     {
       text: "Contact",
-      url: "/contact"
+      url: "/contact",
     },
-    {
-      text: "About",
-      url: "/about"
-    }
-  ]
-};
+  ],
+}

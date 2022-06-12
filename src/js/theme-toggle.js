@@ -1,23 +1,31 @@
-const darkModeButton = document.getElementById("dark-mode-button");
-darkModeButton.removeAttribute("hidden");
+const themeSwitcherButton = document.getElementById("theme-switcher-button")
+themeSwitcherButton.removeAttribute("hidden")
 
-const isDarkMode = localStorage.getItem("rve.com-dark-mode");
+const LOCAL_STORAGE_THEME = "theme"
+const DARK_THEME = "dark"
+const LIGHT_THEME = "light"
 
-function toggleDarkMode() {
-  document.documentElement.classList.toggle("dark-mode");
+const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)")
 
-  if (document.documentElement.classList.contains("dark-mode")) {
-    // If we just enabled dark mode, save to localStorage
-    try {
-      localStorage.setItem("rve.com-dark-mode", JSON.stringify(true));
-    } catch {}
-  } else if (isDarkMode) {
-    // if we just disabled dark mode and it exists in localStorage, set
-    // to false and save
-    try {
-      localStorage.setItem("rve.com-dark-mode", JSON.stringify(false));
-    } catch {}
-  }
+if (!document.documentElement.className) {
+  const theme = prefersDarkMode.matches ? DARK_THEME : LIGHT_THEME
+  document.documentElement.className = theme
 }
 
-darkModeButton.addEventListener("click", toggleDarkMode);
+function toggleDarkMode() {
+  let theme
+
+  if (document.documentElement.className === DARK_THEME) {
+    document.documentElement.className = LIGHT_THEME
+    theme = LIGHT_THEME
+  } else {
+    document.documentElement.className = DARK_THEME
+    theme = DARK_THEME
+  }
+
+  try {
+    localStorage.setItem(LOCAL_STORAGE_THEME, theme)
+  } catch {}
+}
+
+themeSwitcherButton.addEventListener("click", toggleDarkMode)
