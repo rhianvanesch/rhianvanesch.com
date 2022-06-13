@@ -1,9 +1,9 @@
-{% include partials/head.html %}
+{% include "partials/head.html" %}
   <main>
     <h1 class="page-title">{{ title }}</h1>
 
     {% assign posts = collections.allPosts %}
-    {% include partials/post-list.html %}
+    {% include "partials/post-list.html" %}
   </main>
-{% include partials/footer.html %}
-{% include partials/end.html %}
+{% include "partials/footer.html" %}
+{% include "partials/end.html" %}

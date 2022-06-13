@@ -1,4 +1,4 @@
-{% include partials/head.html %}
+{% include "partials/head.html" %}
   <main>
     <article class="post">
       <time class="post__datetime" datetime="{{ page.date | getDatetime }}">{{ page.date | toFullDate }}</time>
@@ -6,5 +6,5 @@
       {{ content }}
     </article>
   </main>
-{% include partials/footer.html %}
-{% include partials/end.html %}
+{% include "partials/footer.html" %}
+{% include "partials/end.html" %}
