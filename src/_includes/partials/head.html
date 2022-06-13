@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{% if page.url == '/' %}{{ title }}{% else %}{{ title }} • {{ config.title }}{% endif %}</title>
   <script>const theme = localStorage.getItem("theme");theme && document.documentElement.classList.add(theme);</script>
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/@root/src/scss/main.scss">
   <meta name="color-scheme" content="dark light">
   
   <link rel="alternate" href="{{ config.feed.path | url }}" type="application/atom+xml" title="{{ config.title }}">
