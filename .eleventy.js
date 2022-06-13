@@ -4,7 +4,12 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
 
-const { getDayMonth, getYear, toFullDate } = require("./src/filters/date.js")
+const {
+  getDatetime,
+  getDayMonth,
+  getYear,
+  toFullDate,
+} = require("./src/filters/date.js")
 const { slugifyText } = require("./src/filters/slug.js")
 
 const position = {
@@ -48,9 +53,10 @@ module.exports = (eleventyConfig) => {
     collection.getFilteredByTag("posts").reverse()
   )
 
-  eleventyConfig.addWatchTarget("./src/scss/");
-  eleventyConfig.addWatchTarget("./src/js/");
+  eleventyConfig.addWatchTarget("./src/scss/")
+  eleventyConfig.addWatchTarget("./src/js/")
 
+  eleventyConfig.addFilter("getDatetime", getDatetime)
   eleventyConfig.addFilter("getDayMonth", getDayMonth)
   eleventyConfig.addFilter("getYear", getYear)
   eleventyConfig.addFilter("slug", slugifyText)
