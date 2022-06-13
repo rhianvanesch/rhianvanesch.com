@@ -20,7 +20,7 @@
 }
 
 .post-list__datetime {
-  @include font-size(0.75rem);
+  font-size: 0.75rem;
 
   align-items: center;
   background-color: var(--link-colour--lightest);
@@ -33,7 +33,7 @@
 }
 
 .post-list__link {
-  @include font-size(1.125rem);
+  font-size: 1.125rem;
 
   font-weight: 500;
 }
@@ -61,7 +61,7 @@
 }
 
 .post__datetime {
-  @include font-size(0.875rem);
+  font-size: 0.875rem;
 
   background-color: var(--link-colour--lightest);
   border-radius: 5px;

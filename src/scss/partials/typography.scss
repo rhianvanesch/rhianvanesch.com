@@ -7,7 +7,7 @@ textarea:focus {
 }
 
 body {
-  @include font-size(1rem);
+  font-size: 1rem;
 
   color: var(--text-colour);
 }
@@ -25,14 +25,14 @@ a {
 }
 
 h1 {
-  @include font-size(1.75rem);
+  font-size: 1.75rem;
 
   font-weight: normal;
   margin: 0 0 1.5rem 0;
 }
 
 h2 {
-  @include font-size(1.5rem);
+  font-size: 1.5rem;
 
   font-weight: 400;
   margin: 0;
@@ -41,7 +41,7 @@ h2 {
 }
 
 h3 {
-  @include font-size(1.25rem);
+  font-size: 1.25rem;
 
   font-weight: 400;
   margin: 0;
@@ -50,7 +50,7 @@ h3 {
 }
 
 h4 {
-  @include font-size(1.125rem);
+  font-size: 1.125rem;
 
   font-weight: 400;
   margin: 0;
@@ -76,7 +76,7 @@ p {
 }
 
 pre {
-  @include font-size(1rem);
+  font-size: 1rem;
 
   line-height: 1.4;
   overflow: auto;
@@ -106,13 +106,13 @@ code {
 }
 
 .feature {
-  @include font-size(1.125rem);
+  font-size: 1.125rem;
 
   color: inherit;
 }
 
 .text-aside {
-  @include font-size(0.8em);
+  font-size: 0.8em;
 
   font-style: italic;
 }
