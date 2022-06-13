@@ -2,7 +2,7 @@
   <ol class="post-list" reversed>
     {% for post in posts %}
       <li class="post-list__item">
-        <time class="post-list__datetime">
+        <time class="post-list__datetime" datetime="{{ post.date | getDatetime }}">
           <span>{{ post.date | getDayMonth }}</span>
           <span>{{ post.date | getYear }}</span>
         </time>
