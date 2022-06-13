@@ -20,7 +20,7 @@
     <ol class="post-list" reversed>
     {% for appearance in appearances %}
       <li class="post-list__item">
-        <time class="post-list__datetime">
+        <time class="post-list__datetime" datetime="{{ appearance.date }}">
           <span>{{ appearance.date | getDayMonth }}</span>
           <span>{{ appearance.date | getYear }}</span>
         </time>
