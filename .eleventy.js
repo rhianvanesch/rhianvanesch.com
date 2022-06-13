@@ -3,6 +3,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss")
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const markdownIt = require("markdown-it")
 const markdownItAnchor = require("markdown-it-anchor")
+const slinkity = require("slinkity")
 
 const {
   getDatetime,
@@ -42,8 +43,7 @@ const renderPermalink = (slug, opts, state, idx) => {
 }
 
 module.exports = (eleventyConfig) => {
-  eleventyConfig.addPassthroughCopy("src/static")
-  eleventyConfig.addPassthroughCopy("src/images")
+  eleventyConfig.addPassthroughCopy("public")
 
   eleventyConfig.addCollection("last5Posts", (collection) =>
     collection.getFilteredByTag("posts").slice(0, 4).reverse()
@@ -53,9 +53,6 @@ module.exports = (eleventyConfig) => {
     collection.getFilteredByTag("posts").reverse()
   )
 
-  eleventyConfig.addWatchTarget("./src/scss/")
-  eleventyConfig.addWatchTarget("./src/js/")
-
   eleventyConfig.addFilter("getDatetime", getDatetime)
   eleventyConfig.addFilter("getDayMonth", getDayMonth)
   eleventyConfig.addFilter("getYear", getYear)
@@ -64,6 +61,7 @@ module.exports = (eleventyConfig) => {
 
   eleventyConfig.addPlugin(pluginRss)
   eleventyConfig.addPlugin(pluginSyntaxHighlight)
+  eleventyConfig.addPlugin(slinkity.plugin, slinkity.defineConfig({}))
 
   eleventyConfig.addLiquidShortcode(
     "image",

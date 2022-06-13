@@ -4,15 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "run-s clean scss js prod",
-    "clean": "rimraf dist",
-    "prod": "eleventy",
-    "js": "rollup --config",
-    "js:watch": "rollup --config --watch",
-    "scss": "sass src/scss/main.scss dist/css/style.css --style=compressed",
-    "scss:watch": "sass src/scss/main.scss dist/css/style.css --style=compressed --watch",
-    "serve": "eleventy --serve",
-    "start": "run-p clean scss:watch js:watch serve"
+    "build": "eleventy",
+    "start": "eleventy --serve"
   },
   "author": "Rhian van Esch <rhian@rhianvanesch.com> (https://rhianvanesch.com/)",
   "license": "MIT",
@@ -21,11 +14,8 @@
     "@11ty/eleventy-plugin-rss": "^1.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "markdown-it-anchor": "^5.2.5",
-    "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.38.5",
-    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.32.6",
+    "slinkity": "^0.8.3",
     "slugify": "^1.4.6"
   }
 }
