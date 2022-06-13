@@ -1,4 +1,4 @@
-{% include partials/head.html %}
+{% include "partials/head.html" %}
   <main>
     <p class="feature">Hello! <span role="img" aria-label="Waving hand">👋</span></p>
 
@@ -9,7 +9,7 @@
     <h2>Recent posts</h2>
 
     {% assign posts = collections.last5Posts %}
-    {% include partials/post-list.html %}
+    {% include "partials/post-list.html" %}
 
     {% if collections.last5Posts.length > 5 %}<a href="/posts">See all posts &rarr;</a>{% endif %}
 
@@ -32,6 +32,6 @@
       {% endfor %}
     </ol>
   </main>
-  {% include partials/footer.html %}
+  {% include "partials/footer.html" %}
 </div>
-{% include partials/end.html %}
+{% include "partials/end.html" %}
