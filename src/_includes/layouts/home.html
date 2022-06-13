@@ -12,6 +12,25 @@
     {% include partials/post-list.html %}
 
     {% if collections.last5Posts.length > 5 %}<a href="/posts">See all posts &rarr;</a>{% endif %}
+
+    <hr>
+
+    <h2>Appearances</h2>
+
+    <ol class="post-list" reversed>
+    {% for appearance in appearances %}
+      <li class="post-list__item">
+        <time class="post-list__datetime">
+          <span>{{ appearance.date | getDayMonth }}</span>
+          <span>{{ appearance.date | getYear }}</span>
+        </time>
+        <span class="post-list__text-wrapper">
+          <a href="{{ appearance.url }}" class="post-list__link" rel="bookmark">{{ appearance.title }}</a>
+          <span class="post-list__secondary-text">{{ appearance.type }}: {{ appearance.on }} ({{ appearance.location }})</span>
+        </span>
+      </li>
+      {% endfor %}
+    </ol>
   </main>
   {% include partials/footer.html %}
 </div>

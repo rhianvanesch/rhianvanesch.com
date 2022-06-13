@@ -38,6 +38,15 @@
   font-weight: 500;
 }
 
+.post-list__text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-list__secondary-text {
+  font-size: 0.875rem;
+}
+
 .deprecation-notice {
   background-color: var(--deprecation-message-light);
   border: 1px solid var(--deprecation-message-dark);
