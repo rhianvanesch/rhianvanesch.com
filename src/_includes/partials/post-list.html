@@ -3,7 +3,7 @@
     {% for post in posts %}
       <li class="post-list__item">
         <time class="post-list__datetime" datetime="{{ post.date | getDatetime }}">
-          <span>{{ post.date | getDayMonth }}</span>
+          <span>{{ post.date | getMonthDay }}</span>
           <span>{{ post.date | getYear }}</span>
         </time>
         <a href="{{ post.url }}" class="post-list__link" rel="bookmark">{{ post.data.title }}</a>
