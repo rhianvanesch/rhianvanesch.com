@@ -60,3 +60,7 @@ textarea {
     background-color: var(--success-message-dark);
   }
 }
+
+[data-field] {
+  color: var(--error-text);
+}
