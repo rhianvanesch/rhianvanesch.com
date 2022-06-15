@@ -7,7 +7,7 @@ const slinkity = require("slinkity")
 
 const {
   getDatetime,
-  getDayMonth,
+  getMonthDay,
   getYear,
   toFullDate,
 } = require("./src/filters/date.js")
@@ -54,7 +54,7 @@ module.exports = (eleventyConfig) => {
   )
 
   eleventyConfig.addFilter("getDatetime", getDatetime)
-  eleventyConfig.addFilter("getDayMonth", getDayMonth)
+  eleventyConfig.addFilter("getMonthDay", getMonthDay)
   eleventyConfig.addFilter("getYear", getYear)
   eleventyConfig.addFilter("slug", slugifyText)
   eleventyConfig.addFilter("toFullDate", toFullDate)

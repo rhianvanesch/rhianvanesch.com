@@ -1,53 +1,38 @@
-// Stolen from https://stackoverflow.com/a/31615643
-const appendSuffix = (n) => {
-  var s = ["th", "st", "nd", "rd"],
-    v = n % 100
-  return n + (s[(v - 20) % 10] || s[v] || s[0])
-}
-
 function toFullDate(value) {
   const dateObject = new Date(value)
 
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ]
-  const dayWithSuffix = appendSuffix(dateObject.getDate())
+  const dateParts = new Intl.DateTimeFormat("en-GB", {
+    year: "numeric",
+    day: "numeric",
+    month: "long",
+  }).formatToParts(dateObject)
 
-  return `${dayWithSuffix} ${
-    months[dateObject.getMonth()]
-  } ${dateObject.getFullYear()}`
+  const suffixes = {
+    one: "st",
+    two: "nd",
+    few: "rd",
+    other: "th",
+  }
+
+  const ordinalRules = new Intl.PluralRules("en", { type: "ordinal" })
+
+  const dayPart = dateParts.find((part) => part.type === "day").value
+  const monthPart = dateParts.find((part) => part.type === "month").value
+  const yearPart = dateParts.find((part) => part.type === "year").value
+
+  const ordinal = ordinalRules.select(Number(dayPart))
+
+  return `${dayPart}${suffixes[ordinal]} ${monthPart} ${yearPart}`
 }
 
-function getDayMonth(value) {
+function getMonthDay(value) {
   const dateObject = new Date(value)
 
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ]
+  const month = new Intl.DateTimeFormat("en-GB", {
+    month: "short",
+  }).format(dateObject)
 
-  return `${months[dateObject.getMonth()]} ${dateObject.getDate()}`
+  return `${month} ${dateObject.getDate()}`
 }
 
 function getYear(value) {
@@ -61,7 +46,7 @@ function getDatetime(value) {
 
 module.exports = {
   getDatetime,
-  getDayMonth,
+  getMonthDay,
   getYear,
   toFullDate,
 }
