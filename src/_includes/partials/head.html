@@ -9,6 +9,7 @@
   <script>const theme = localStorage.getItem("theme");theme && document.documentElement.classList.add(theme);</script>
   <link rel="stylesheet" href="/@root/src/scss/main.scss">
   <meta name="color-scheme" content="dark light">
+  <meta name="generator" content="{{ eleventy.generator }}">
   
   <link rel="alternate" href="{{ config.feed.path | url }}" type="application/atom+xml" title="{{ config.title }}">
   <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
