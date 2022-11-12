@@ -51,4 +51,3 @@ Monitors: 2 x Dell U2515H
 - [SVGOMG](https://jakearchibald.github.io/svgomg/) for optimising SVGs
 - [Feedly](https://feedly.com/i/index) for my blog reading
 - [Pocket](https://getpocket.com/) to save articles that I will <s>read later</s> never read again
-- [Tweetdeck](https://tweetdeck.twitter.com/) to consume Twitter
