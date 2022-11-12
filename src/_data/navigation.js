@@ -8,9 +8,5 @@ module.exports = {
       text: "Uses",
       url: "/uses",
     },
-    {
-      text: "Contact",
-      url: "/contact",
-    },
   ],
 }

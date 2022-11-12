@@ -8,16 +8,6 @@ body {
   --link-colour--lighter: #{rgba($link-colour, 0.2)};
   --link-colour--lightest: #{rgba($link-colour, 0.05)};
 
-  // contact-form
-  --success-message-light: #d7e6d7;
-  --success-message-dark: #{darken(#d7e6d7, 5%)};
-  --success-message-button: #{darken(#d7e6d7, 10%)};
-  --input-bg: #ffffff;
-  --input-border: #dee4ea;
-  --button-bg: #{lighten($link-colour, 30%)};
-  --button-border: #{lighten($link-colour, 25%)};
-  --error-text: #ad0000;
-
   // main
   --figure-border: #dddddd;
 
@@ -38,16 +28,6 @@ body {
     --link-colour--light: #{rgba($link-colour-dark, 0.5)};
     --link-colour--lighter: #{rgba($link-colour-dark, 0.3)};
     --link-colour--lightest: #{rgba($link-colour-dark, 0.1)};
-
-    // contact-form
-    --success-message-light: #143828;
-    --success-message-dark: #{darken(#143828, 5%)};
-    --success-message-button: #{lighten(#143828, 10%)};
-    --input-bg: #333333;
-    --input-border: #444444;
-    --button-bg: #403967;
-    --button-border: #{darken(#403967, 10%)};
-    --error-text: #ff8d8d;
 
     // main
     --figure-border: #555555;
@@ -73,15 +53,6 @@ body {
     --link-colour--lighter: #{rgba($link-colour-dark, 0.3)};
     --link-colour--lightest: #{rgba($link-colour-dark, 0.1)};
 
-    // contact-form
-    --success-message-light: #143828;
-    --success-message-dark: #{darken(#143828, 5%)};
-    --success-message-button: #{lighten(#143828, 10%)};
-    --input-bg: #333333;
-    --input-border: #444444;
-    --button-bg: #403967;
-    --button-border: #{darken(#403967, 10%)};
-
     // main
     --figure-border: #555555;
 
@@ -102,14 +73,6 @@ body {
       --link-colour--light: #{rgba($link-colour, 0.3)};
       --link-colour--lighter: #{rgba($link-colour, 0.2)};
       --link-colour--lightest: #{rgba($link-colour, 0.05)};
-
-      // contact-form
-      --success-message-light: #d7e6d7;
-      --success-message-dark: #{darken(#d7e6d7, 5%)};
-      --input-bg: #ffffff;
-      --input-border: #dee4ea;
-      --button-bg: #{lighten($link-colour, 30%)};
-      --button-border: #{lighten($link-colour, 25%)};
 
       // main
       --figure-border: #dddddd;
