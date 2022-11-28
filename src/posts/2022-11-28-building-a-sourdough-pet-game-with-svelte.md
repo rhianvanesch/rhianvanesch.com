@@ -29,7 +29,7 @@ Delete `./public/vite.svg`, `./assets/svelte.svg` and `./lib/Counter.svelte`.
 
 Update the contents of `./src/App.svelte` to remove everything but `<script>` and `<main>`, plus a catchy title:
 
-```
+```md
 <script lang="ts">
 
 </script>
@@ -57,7 +57,9 @@ And we'll output it on the page too:
 
 ```html
 <main>
-  {size}
+  <h1>Sourdough starter game</h1>
+
+  <p>{size}</p>
 </main>
 ```
 
@@ -71,15 +73,44 @@ function feedStarter() {
 
 ```html
 <main>
-  {size}
+  <h1>Sourdough starter game</h1>
 
-  <button>Feed</button>
+  <p>{size}</p>
+
+  <button on:click={feedStarter}>
+    Feed
+  </button>
 </main>
 ```
 
-While clicking a button to increase a number might seem like the perfect game, we can do better.
+While clicking a button to increase a number might seem like the perfect game, we can do better! If you've ever looked after a sourdough starter, you'll know that at some point it might get too big for its container. So, we can prevent the user from feeding it when it's too big. We'll choose an arbitrary number for the upper limit, and update the `feedStarter` function to warn the user when the starter is too big.
+
+```js
+const MAXIMUM_SIZE = 20
+
+function feedStarter() {
+  if (size === MAXIMUM_SIZE) {
+    alert("I'm too big. If you feed me any more, the jar might break!")
+  } else {
+    size++
+  }
+}
+```
+
+Three quick notes here:
+
+1. There are prettier, more user-friendly ways to alert the user than `alert()`, but this is polish that can be added later.
+2. I'm not disabling the `<button>` because if you do that, there's no way for the user to understand why they can't proceed. It's also [not accessible](https://www.smashingmagazine.com/2021/08/frustrating-design-patterns-disabled-buttons/), so best avoided.
+3. I've created the `MAXIMUM_SIZE` constant because it's more readable and understandable than `size === 20`. See also: [magic numbers](https://en.wikipedia.org/wiki/Magic_number_(programming)). 
 
 ## Making the sourdough starter hungry: the game loop
+
+Let's go back to those initial requirements:
+
+> - over time the sourdough starter gets hungry
+> - you can feed it to make it grow, **once it's hungry enough**
+
+Along with `size` we need to introduce the concept of `hunger`. As with size, we can track this in a variable.
 
 Resources:
 
