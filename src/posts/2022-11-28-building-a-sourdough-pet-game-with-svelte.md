@@ -25,3 +25,73 @@ If I was thinking more seriously about what to use, I would ask where this game 
 
 At the time of writing, you can set up a Svelte app by running `npm create vite@latest myapp -- --template svelte` in your terminal, and then following the prompts. I also chose to add TypeScript, though that's optional. This is documented further in the [Svelte docs](https://svelte.dev/docs#getting-started).
 
+Delete `./public/vite.svg`, `./assets/svelte.svg` and `./lib/Counter.svelte`.
+
+Update the contents of `./src/App.svelte` to remove everything but `<script>` and `<main>`, plus a catchy title:
+
+```
+<script lang="ts">
+
+</script>
+
+<main>
+  <h1>Sourdough starter game</h1>
+</main>
+```
+
+## Feeding the sourdough starter
+
+We just removed the `Counter.svelte` component &mdash; but in order to feed the starter, we're going to need something very similar. (Finally, a real-world use for counter components!)
+
+In the game requirements, I wrote:
+
+> you can feed it to make it grow
+
+If it can grow, we'll need to track how big it is. So let's add a variable to track size in `./src/App.svelte`:
+
+```js
+let size = 1
+```
+
+And we'll output it on the page too:
+
+```html
+<main>
+  {size}
+</main>
+```
+
+Let's make that number bigger now by adding back the counter component we removed earlier:
+
+```js
+function feedStarter() {
+  size++
+}
+```
+
+```html
+<main>
+  {size}
+
+  <button>Feed</button>
+</main>
+```
+
+While clicking a button to increase a number might seem like the perfect game, we can do better.
+
+## Making the sourdough starter hungry: the game loop
+
+Resources:
+
+- https://developer.mozilla.org/en-US/docs/Games/Anatomy#building_a_main_loop_in_javascript
+- https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
+- https://isaacsukin.com/news/2015/01/detailed-explanation-javascript-game-loops-and-timing
+- https://gablaxian.com/articles/creating-a-game-with-javascript/the-game-loop/
+
+## Ready, set, bake
+
+## Showing more than just numbers: fun with SVG
+
+## Saving game state to `localStorage`
+
+## Recap and conclusion
