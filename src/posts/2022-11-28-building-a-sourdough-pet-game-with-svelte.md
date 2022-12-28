@@ -19,7 +19,7 @@ You can probably tell I'm not a game designer, because this isn't a very excitin
 
 This was a side project, and I wanted to try [Svelte](https://svelte.dev/). So it's written with Svelte.
 
-If I was thinking more seriously about what to use, I would ask where this game would be seen (and deployed). It could be a full-blown SPA, but we don't need routing, and we might want to render some static content on the page around the interactive parts. We'd also likely want the resulting JavaScript to be as small as possible so people could comfortably load this on a mobile device, and also just to be a responsible internet citizen. This all actually makes Svelte a pretty good fit, but you can achieve the same with other frameworks (or no framework - vanilla JavaScript or web components would be perfectly valid options).
+If I was thinking more seriously about what to use, I would ask where this game would be seen (and deployed). It could be a full-blown SPA, but we don't need routing, and we might want to render some static content on the page around the interactive parts. We'd also likely want the resulting JavaScript to be as small as possible so people could comfortably load this on a mobile device, and also just to be a responsible internet citizen. This all actually makes Svelte a pretty good fit, but you can achieve the same with other frameworks (or no framework &mdash; vanilla JavaScript or web components would be perfectly valid options).
 
 ## Initial setup
 
@@ -62,6 +62,8 @@ And we'll output it on the page too:
   <p>{size}</p>
 </main>
 ```
+
+I'm using `1` rather than `0` because later, I'll use this number to decide how large the sourdough starter is when displayed on the screen.
 
 Let's make that number bigger now by adding back the counter component we removed earlier:
 
@@ -111,6 +113,12 @@ Let's go back to those initial requirements:
 > - you can feed it to make it grow, **once it's hungry enough**
 
 Along with `size` we need to introduce the concept of `hunger`. As with size, we can track this in a variable.
+
+```js
+let hunger = 0
+```
+
+Now we need to increase the `hunger` over time. This is a good time to introduce a game loop to our game. 
 
 Resources:
 
